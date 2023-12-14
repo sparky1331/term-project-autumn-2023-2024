@@ -4,6 +4,9 @@ import math
 
 FPS = 60
 
+WIDTH = 800
+HEIGHT = 600
+
 TURQOISE = 0x40E0D0
 
 k = 0.2
@@ -33,3 +36,18 @@ class Car:
         self.vy += self.ay
         self.x += self.vx
         self.y += self.vy
+
+
+pygame.init()
+
+DISPLAYSURFACE = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+
+mainLoop = True
+
+while mainLoop:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            mainLoop = False
+    pygame.display.update()
+
+pygame.quit()
